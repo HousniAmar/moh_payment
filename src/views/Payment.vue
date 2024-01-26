@@ -3,62 +3,42 @@
   
     <div v-if="!payementSuccess">
     <div>
-      <img src="../assets/icon/logo.jpeg" alt="" style="width: 20%; border-radius: 50%;">
+      <img src="../assets/icon/logo.jpeg" alt="" style="width: 35%; border-radius: 50%;">
     </div>
-    <h1>Paiement</h1>
+    <h1 style="color: black;"></h1>
       <!-- <button v-if="paymentFormVisible" @click="loadPaymentForm()">Payer</button> -->
       <div class="mt-10">
         <div class="w-full md:w-10/12 mx-auto relative">
           <div class="grid lg:grid-cols-2 gap-8 h-full">
-            <div class="px-4 md:px-0 h-full">
-              <div v-show="formLoaded" style="display: flex; justify-content: space-between; margin: auto;">
+            <div class="px-4 md:px-0 h-full" style="margin-bottom: 10%;">
+              <div v-show="formLoaded" style="display: flex; justify-content: space-between; margin: auto; gap: 15px;">
                 <input class="rounded-box" placeholder="Nom" required/>
                 <input class="rounded-box" placeholder="Prénom" required/>
               </div>
               <div v-show="formLoaded" id="payzen-payment-form" class="mt-5 mb-32"></div>
   
-              <div v-show="!formLoaded" class="gap-y-5 mt-5 grid">
-                <div class="pulse-container">
-                  <div class="pulse"></div>
+              <div v-show="!formLoaded" class="mt-5 mb-32" id="grid">
+                <div class="pulse-container flex flex-wrap justify-center gap-4 md:gap-10">
+                    <div class="pulse"></div>
+                    <div class="pulse"></div>
                 </div>
                 <div class="pulse-container">
-                  <div class="pulse"></div>
+                    <div class="pulse"></div>
                 </div>
                 <div class="pulse-container">
-                  <div class="pulse"></div>
+                    <div class="pulse"></div>
                 </div>
                 <div class="pulse-container">
-                  <div class="pulse"></div>
-                </div>    
-  
-              </div>
+                    <div class="pulse"></div>
+                </div>
+            </div>
+
+            
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- <div v-else
-        class="w-screen h-screen flex content-center justify-center items-center"
-      >
-        <div class="bg-white p-6 marker:">
-          <svg viewBox="0 0 24 24" class="text-green-600 w-16 h-16 mx-auto my-6" style="width: 100px;">
-            <path
-              fill="#a3812b"
-              d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm6.927,8.2-6.845,9.289a1.011,1.011,0,0,1-1.43.188L5.764,13.769a1,1,0,1,1,1.25-1.562l4.076,3.261,6.227-8.451A1,1,0,1,1,18.927,8.2Z"
-            ></path>
-          </svg>
-          <div class="text-center">
-            <h3
-              class="md:text-2xl text-base text-gray-900 font-semibold text-center" style="color: black;"
-            >
-              Paiement effectué avec succès!
-            </h3>
-            <p class="text-gray-600 my-2" style="color: black;">
-              Merci d'avoir effectué votre paiement sécurisé en ligne.
-            </p>
-          </div>
-        </div>
-      </div> -->
   </template>
   
   <script>
@@ -152,28 +132,28 @@
     & .kr-expiry,
     .kr-pan,
     .kr-security-code {
-      border: 2px solid #d9dbdf !important;
-      border-radius: 9999px !important;
+      border: 2px solid #9c81263f !important;
+      border-radius: 10px !important;
       margin-top: 5%;
+      width: auto;
+      height: 50px !important;
     }
   
     & .kr-payment-button {
-      border-radius: 9999px !important;
-      background-color: #242424 !important;
-      color: #a3812b !important;
-      font-weight: 600 !important;
-      position: absolute !important;
-      max-width: 15rem !important;
-      margin-top: 3rem !important;
-      // right: 0 !important;
-      text-align: center !important;
-      margin-top: 1% !important;
-      width: 100% !important;
-      font-size: 18px;
+    font-size: 18px;
+    border-radius: 10px!important;
+    background-color: #242424!important;
+    color: #a3812b!important;
+    font-weight: 600!important;
+    width: 100%!important;
+    text-align: center!important;
+    margin: 20px 0 5px!important;
+    padding-top: 10px!important;
+    padding-bottom: 10px!important;
     }
   
     & .kr-field-component {
-      padding-left: 10px !important;
+      padding-left: 20px !important;
       padding-top: 12px !important;
     }
   
@@ -272,11 +252,11 @@
         width: 45%;
         height: 10%;
         background-color: rgba(52, 152, 219, 0);
-        border-radius: 30px; 
+        border-radius: 10px; 
         padding: 15px;
         color: black;
         text-align: left;
-        border: 2px solid rgba(0, 0, 0, 0.15) !important;
+        border: 2px solid #9c81263f !important;
         font-family: Poppins, sans-serif;
         font-size: 16px;
         font-style: normal;
@@ -286,20 +266,36 @@
   .rounded-box:focus {
       outline: 0px solid #ffffffb8;
   }
+
+  .rounded-box::placeholder {
+    font-family: Arial;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    color: rgba(128, 128, 128, 0.815);
+  }
+
+  #grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 10px; 
+}
   
   .pulse-container {
-        display: grid;
-        gap: 5px;
+        display: flex;
+        gap: 5%;
         margin-top: 5px;
-        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
       }
   
       .pulse {
-        width: 800px;
-        height: 5px;
-        border-radius: 45%;
-        background-color: #83672c;
+        flex-wrap: 1;
+        width: 100%;
+        height: 2.5em;
+        border-radius: 2%;
+        background-color: rgb(131 103 44 / 10%);
         animation: pulseAnimation 1s infinite alternate;
+        border: 2px solid #08080829;
       }
   
       @keyframes pulseAnimation {
@@ -386,5 +382,13 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@media screen and (max-width: 300px) {
+    .pulse-container {
+        flex-direction: column; 
+        text-align: center;
+        max-width: 100%; 
+    }
 }
   </style>
