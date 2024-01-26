@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+*::placeholder{
+  color: rgb(173, 173, 173);
+}
+
+/* custom style to override the default style of vue-select component */
+.custom-vue-search .v-select {
+  position: initial !important;
+}
+.custom-vue-search .vs__dropdown-toggle {
+  border: 0 !important;
+  width: 100% !important;
+}
+.custom-vue-search .vs__actions {
+  display: none !important;
+}
+
+.custom-vue-search .vs__dropdown-menu {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-height: 16rem !important;
+  margin-top: 1rem !important;
+  border-radius: 15px;
+  border: 1px solid #1e5caa;
+  padding: 7px !important;
+}
+
+.custom-vue-search .vs__selected {
+  color: #2f71c2 !important;
+  font-weight: bold;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.custom-vue-search .vs__dropdown-option {
+  padding: 0 !important;
+}
+
+.custom-vue-search .vs__dropdown-option--selected div {
+  background-color: #e0e8f3;
+}
+
+.custom-vue-search .vs__dropdown-option--selected {
+  background-color: #e0e8f3;
+}
+.custom-vue-search .vs__search::placeholder {
+  color: #a1abb7 !important;
+}
+
+.custom-vue-search .vs__search {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+/* custom style to override the default style of vue-select component */
+
+/* custom style for datepicker modal  */
+
+.custom-datepicker .dp__menu {
+  flex-grow: 1;
+  border: 0;
+}
+.custom-datepicker .dp__menu .dp__flex_display {
+  justify-content: space-evenly;
+}
+.custom-datepicker .dp__button_bottom {
+  display: none;
+}
+
+.custom-datepicker .dp__theme_light {
+  --dp-background-color: #ffffff;
+  --dp-text-color: #1e5caa;
+  --dp-hover-color: transparent;
+  --dp-hover-text-color: #212121;
+  --dp-hover-icon-color: #959595;
+  --dp-primary-color: #00e19e;
+  --dp-primary-text-color: #ffffff;
+  --dp-secondary-color: #c0c4cc;
+  --dp-border-color: #ddd;
+  --dp-menu-border-color: #ddd;
+  --dp-border-color-hover: #aaaeb7;
+  --dp-disabled-color: #1e5caa4d;
+  --dp-scroll-bar-background: #f3f3f3;
+  --dp-scroll-bar-color: #959595;
+  --dp-success-color: #76d275;
+  --dp-success-color-disabled: #a3d9b1;
+  --dp-icon-color: #1e5caa;
+  --dp-danger-color: #ff6f60;
+  --dp-highlight-color: rgba(25, 118, 210, 0.1);
+}
+
+.custom-datepicker .dp__range_end {
+  border-bottom-right-radius: 19px;
+  border-top-right-radius: 19px;
+}
+
+.custom-datepicker .dp__range_start {
+  border-radius: 19px;
+  border-top-left-radius: 19px;
+}
+.custom-datepicker .dp__month_year_wrap {
+  font-weight: bold;
+}
+.custom-datepicker .dp__calendar_header,
+.dp__calendar_row {
+  gap: 3px;
+}
+
+.custom-datepicker .dp__calendar_header_separator {
+  display: none;
+}
+/* custom style for datepicker modal  */
+
+/* custom style for toggle button */
+.toggle-on {
+  background: #1e5caa;
+  border-color: #1e5caa;
+}
+.toggle-container:focus {
+  box-shadow: none;
+}
+
+/*  */
+
+.search-destination .vs__dropdown-toggle {
+  height: 100%;
+  border: 0;
+}
+
+.search-destination .vs__dropdown-menu {
+  width: 100% !important;
+  min-width: 100% !important;
+  max-height: 16rem !important;
+  margin-top: 1rem !important;
+  border-radius: 15px;
+  border: 1px solid #1e5caa;
+  padding: 7px !important;
+}
+
+.search-destination .vs__selected {
+  color: #a6abb6 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.search-destination .vs__dropdown-option {
+  padding: 0 !important;
+}
+
+.search-destination .vs__dropdown-option--selected div {
+  background-color: #e0e8f3;
+}
+
+.search-destination .vs__dropdown-option--selected {
+  background-color: #e0e8f3;
+}
+.search-destination .vs__search::placeholder {
+  color: #a1abb7 !important;
+}
+
+.search-destination .vs__search {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.dp__pointer {
+  font-weight: bold;
+}
+
+.vs--searchable .vs__dropdown-toggle {
+  padding: 0;
+}
+
+.dashboard-icon {
+  background-image: url("/src/assets/img/routes/dashboard.svg");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
+  display: block;
+  fill: white;
+}
