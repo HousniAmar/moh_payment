@@ -11,10 +11,10 @@
         <div class="w-full md:w-10/12 mx-auto relative">
           <div class="grid lg:grid-cols-2 gap-8 h-full">
             <div class="px-4 md:px-0 h-full" style="margin-bottom: 10%;">
-              <div v-show="formLoaded" style="display: flex; justify-content: space-between; margin: auto; gap: 15px;">
+              <!-- <div v-show="formLoaded" style="display: flex; justify-content: space-between; margin: auto; gap: 15px;">
                 <input class="rounded-box" placeholder="Nom" required/>
                 <input class="rounded-box" placeholder="Prénom" required/>
-              </div>
+              </div> -->
               <div v-show="formLoaded" id="payzen-payment-form" class="mt-5 mb-32"></div>
   
               <div v-show="!formLoaded" class="mt-5 mb-32" id="grid">
@@ -74,9 +74,9 @@
           ($e) => {
             //bloc paiement
             this.payementStore.onPaid($e);
-            this.payementSuccess = true;
-            this.$router.push('/success');
-          }
+           
+          },
+          "22377513:publickey_cxM7883QtMzbQwHQPJOB6UmBXUR6yFPXgM5nW4eZT6BYm"
         );
       }
     },
@@ -104,66 +104,77 @@
   }
   
   #payzen-payment-form {
-    & .kr-embedded {
-      width: 100% !important;
-      position: inherit !important;
-    }
-  
-    & .kr-pan {
-      background: transparent !important;
-    }
-  
-    & .kr-pan,
-    .kr-expiry,
-    .kr-security-code {
-      height: 56px !important;
-    }
-  
-    & .kr-field-wrapper,
-    .kr-field-wrapper-pan,
-    .kr-field-component,
-    .kr-icon,
-    .kr-icon-wrapper-root,
-    .kr-help-button {
-      height: 100% !important;
-      background-color: transparent !important;
-    }
-  
-    & .kr-expiry,
-    .kr-pan,
-    .kr-security-code {
-      border: 2px solid #9c81263f !important;
-      border-radius: 10px !important;
-      margin-top: 5%;
-      width: auto;
-      height: 50px !important;
-    }
-  
-    & .kr-payment-button {
+    
+  /* Optional: Customize placeholder */
+  & .kr-account-holder::placeholder {
+    color: rgba(128, 128, 128, 0.8) !important; /* Custom placeholder color */
+    font-style: italic;                         /* Example style */
+  }
+  & .kr-embedded {
+    width: 100% !important;
+    position: inherit !important;
+  }
+ 
+
+  & .kr-pan {
+    background: transparent !important;
+  }
+
+  & .kr-pan,
+  .kr-card-holder-name,
+  .kr-field-component,
+  .kr-expiry,
+  .kr-security-code {
+    height: 56px !important;
+  }
+
+  & .kr-field-wrapper,
+  .kr-field-wrapper-pan,
+  .kr-field-component,
+  .kr-icon,
+  .kr-icon-wrapper-root,
+  .kr-field-wrapper-cardHolderName,
+  .kr-help-button {
+    height: 100% !important;
+    background-color: transparent !important;
+  }
+
+  & .kr-expiry,
+  .kr-pan,
+  .kr-card-holder-name,
+  .kr-security-code {
+    border: 2px solid #9c81263f !important;
+    border-radius: 10px !important;
+    margin-top: 5%;
+    width: auto;
+    height: 50px !important;
+  }
+
+  & .kr-payment-button {
     font-size: 18px;
-    border-radius: 10px!important;
-    background-color: #242424!important;
-    color: #a3812b!important;
-    font-weight: 600!important;
-    width: 100%!important;
-    text-align: center!important;
-    margin: 20px 0 5px!important;
-    padding-top: 10px!important;
-    padding-bottom: 10px!important;
-    }
-  
-    & .kr-field-component {
-      padding-left: 20px !important;
-      padding-top: 12px !important;
-    }
-  
-    & .kr-help-button-wrapper {
-      padding-right: 10px !important;
-    }
-  
-    & .kr-input-field {
-      border: 2px solid black;
-    }
+    border-radius: 10px !important;
+    background-color: #242424 !important;
+    color: #a3812b !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 20px 0 5px !important;
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  & .kr-field-component {
+    padding-left: 20px !important;
+    padding-top: 12px !important;
+  }
+
+  & .kr-help-button-wrapper {
+    padding-right: 10px !important;
+  }
+
+  & .kr-input-field {
+    border: none;
+  }
   
     /* Change the background color of the input fields in iframes */
     & iframe html body input[type="text"],

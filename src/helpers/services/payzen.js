@@ -1,19 +1,21 @@
 import KRGlue from "@lyracom/embedded-form-glue";
-const PAYZEN_PUBLIC_KEY =
-  "47808908:testpublickey_EFtNA57xIpiDxxTkUUWyrK1AgiQGtMFlWQgLbbY6Pfr2O";
+// const PAYZEN_PUBLIC_KEY =
+//   "22377513:testpublickey_8zhDWmOU69w38IKUA0goGDyZZbGc6o6X9maEwfbrnosVD";
 export async function loadPayzenPaymentForm(
   form_token,
-  form_id = "#payzen-payment-form",
+  form_id,
   onFormReady,
-  onSubmit
+  onSubmit,
+  PAYZEN_PUBLIC_KEY
 ) {
+  console.log("keeeey : ",PAYZEN_PUBLIC_KEY);
   const { KR } = await KRGlue.loadLibrary(
-    "https://static.payzen.eu/",
+    "https://api-sogecommerce.societegenerale.eu",
     PAYZEN_PUBLIC_KEY
   );
   KR.setFormConfig({
-    formToken: form_token,
-    publicKey: PAYZEN_PUBLIC_KEY,
+    'kr-form-token' : form_token,
+    'kr-public-key': PAYZEN_PUBLIC_KEY,
     "kr-language": "fr-FR",
   })
     .then(({ KR }) => {

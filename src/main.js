@@ -6,11 +6,14 @@ import { createPinia } from 'pinia';
 // Import your views
 import Home from './views/Home.vue';
 import Payment from './views/Payment.vue';
+import Test from './views/test.vue';
+
 import PaymentSuccess from './views/PaymentSuccess.vue';
 
 const routes = [
   { path: '/', component: Home },
   { path: '/payment', component: Payment },
+  { path: '/test', component: Test },
   { path: '/success', component: PaymentSuccess },
 ];
 
@@ -27,3 +30,6 @@ app.use(createPinia());
 app.use(router);
 
 app.mount('#app');
+
+export default router; // Export the router instance
+
